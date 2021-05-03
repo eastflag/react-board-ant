@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Board} from "../../dto/Board";
 import './BoardList.scss';
+import {Button, Col, Row} from "antd";
 
 const BoardList: React.FC = (props: any) => {
   // console.log(props);
@@ -20,7 +21,20 @@ const BoardList: React.FC = (props: any) => {
 
   return (
     <>
-
+      <Row justify="end" className="register-button">
+        <Col>
+          <Button type="primary" onClick={() => props.history.push('/board-register')}>등 록</Button>
+        </Col>
+      </Row>
+      {
+        boardList.map((board: Board)=>
+          <Row justify="space-between" className="board">
+            <Col span={18}>{board.title}</Col>
+            <Col>
+              <span>{board.created}</span>
+            </Col>
+          </Row>)
+      }
     </>
   );
 };

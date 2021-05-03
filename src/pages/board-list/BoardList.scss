@@ -1,5 +1,10 @@
+.register-button {
+  margin-bottom: 1rem;
+}
+
 .board {
   cursor: pointer;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #dddddd;
   &:hover {
     background: #eeeeee;
