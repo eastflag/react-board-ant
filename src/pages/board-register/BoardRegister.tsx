@@ -17,7 +17,7 @@ const BoardRegister: React.FC = (props: any) => {
     console.log(res);
 
     if (res.status >= 200 && res.status < 300) {
-      message.success('This is a success message');
+      message.success('등록되었습니다.');
       props.history.push('/');
     } else {
       message.error('error happened.')
