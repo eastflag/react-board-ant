@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Board} from "../../dto/Board";
 import CommentList from "../../components/CommentList";
+import {Button, Card, Row} from "antd";
 
-const MyComponent = ({match, history}: any) => {
+const BoardView = ({match, history}: any) => {
   const [board, setBoard] = useState<Board>({
     title: '',
     content: ''
@@ -32,9 +33,19 @@ const MyComponent = ({match, history}: any) => {
 
   return (
     <>
-
+      <Row justify="end" className="mb-3">
+        <Button type="primary" onClick={() => history.push(`/board-edit/${match.params.id}`)}
+          className="mr-2">수정</Button>
+        <Button type="primary" danger onClick={() => handleShow()}>삭제</Button>
+      </Row>
+      <Card title={board.title}>
+        <p>{board.content}</p>
+      </Card>
+      <Row justify="center" className="mt-3">
+        <Button type="primary" ghost onClick={() => history.goBack()}>돌아가기</Button>
+      </Row>
     </>
   );
 };
 
-export default MyComponent;
+export default BoardView;

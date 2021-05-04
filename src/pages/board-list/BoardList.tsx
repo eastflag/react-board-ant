@@ -28,7 +28,7 @@ const BoardList: React.FC = (props: any) => {
       </Row>
       {
         boardList.map((board: Board)=>
-          <Row justify="space-between" className="board">
+          <Row justify="space-between" className="board" onClick={() => props.history.push(`/board-view/${board.id}`)}>
             <Col span={18}>{board.title}</Col>
             <Col>
               <span>{board.created}</span>
