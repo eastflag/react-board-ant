@@ -56,6 +56,7 @@ const BoardView = ({match, history}: any) => {
       <Row justify="center" className="mt-3">
         <Button type="primary" ghost onClick={() => history.goBack()}>돌아가기</Button>
       </Row>
+      <CommentList board_id={match.params.id}></CommentList>
     </>
   );
 };

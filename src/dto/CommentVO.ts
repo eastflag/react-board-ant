@@ -1,4 +1,4 @@
-export interface Comment {
+export interface CommentVO {
   id?: number;
   content: string;
   created?: string;
